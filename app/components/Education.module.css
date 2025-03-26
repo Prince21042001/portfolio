@@ -1,0 +1,105 @@
+.education {
+  max-width: 800px;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px 0 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, var(--fz-heading));
+  white-space: nowrap;
+  color: var(--lightest-slate);
+}
+
+.number {
+  margin-right: 10px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+  font-weight: 400;
+}
+
+.heading::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--lightest-navy);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.educationItem {
+  position: relative;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  background-color: var(--light-navy);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  transition: var(--transition);
+}
+
+.educationItem:hover {
+  transform: translateY(-5px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeframe {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.school {
+  color: var(--lightest-slate);
+  font-size: var(--fz-xxl);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.degree {
+  color: var(--light-slate);
+  font-size: var(--fz-lg);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.gpa {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  margin-bottom: 15px;
+}
+
+.description {
+  color: var(--slate);
+  font-size: var(--fz-md);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .educationItem {
+    padding: 20px;
+  }
+
+  .timeframe {
+    flex-direction: column;
+    gap: 5px;
+  }
+} 
