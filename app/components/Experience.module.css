@@ -1,6 +1,6 @@
 .experience {
   max-width: 700px;
-  padding: 100px 0;
+  padding: 120px 0;
   margin: 0 auto;
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin: 10px 0 40px;
+  margin: 10px 0 50px;
   width: 100%;
   font-size: clamp(26px, 5vw, var(--fz-heading));
   white-space: nowrap;
@@ -151,6 +151,10 @@
 }
 
 @media (max-width: 768px) {
+  .experience {
+    padding: 80px 0;
+  }
+  
   .container {
     flex-direction: column;
   }
@@ -185,5 +189,43 @@
   
   .tabContent {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 60px 0;
+  }
+  
+  .heading::after {
+    width: 100px;
+  }
+  
+  .tabList {
+    margin-bottom: 20px;
+  }
+  
+  .tabButton {
+    padding: 0 10px 5px;
+    font-size: 11px;
+  }
+  
+  .title {
+    font-size: var(--fz-lg);
+  }
+  
+  .range {
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+  
+  .duty {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .duty::before {
+    font-size: 14px;
   }
 } 

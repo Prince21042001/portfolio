@@ -10,6 +10,12 @@
   background-color: rgba(10, 25, 47, 0.85);
   backdrop-filter: blur(10px);
   z-index: 11;
+  transition: var(--transition);
+}
+
+.scrolled {
+  height: 70px;
+  box-shadow: 0 10px 30px -10px var(--navy-shadow);
 }
 
 .nav {
@@ -82,4 +88,118 @@
 .resumeButton:hover {
   background-color: var(--green-tint);
   outline: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    padding: 0 40px;
+  }
+  
+  .links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+  }
+  
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 75vw;
+    height: 100vh;
+    outline: 0;
+    background-color: var(--light-navy);
+    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
+    z-index: 9;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: var(--transition);
+  }
+  
+  .mobileMenu.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  
+  .mobileLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .mobileLinks li {
+    margin: 15px 0;
+    position: relative;
+    counter-increment: item 1;
+    font-size: var(--fz-lg);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobileNavLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--lightest-slate);
+    padding: 15px 10px;
+    transition: var(--transition);
+  }
+  
+  .mobileNavLink:hover {
+    color: var(--green);
+  }
+  
+  .mobileNavNumber {
+    margin-bottom: 5px;
+    color: var(--green);
+    font-size: var(--fz-sm);
+  }
+  
+  .mobileResumeButton {
+    margin: 25px 0;
+    padding: 1rem 2rem;
+    font-size: var(--fz-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 25px;
+  }
+  
+  .mobileMenu {
+    width: 100vw;
+  }
 } 

@@ -136,13 +136,36 @@
   
   .container {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
   
   .category {
-    padding: 20px;
+    padding: 20px 15px;
   }
   
   .categoryTitle {
     font-size: var(--fz-lg);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+  
+  .categoryTitle::before {
+    font-size: var(--fz-md);
+    margin-right: 8px;
+  }
+  
+  .skillList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  
+  .skillItem {
+    font-size: 14px;
+    padding-left: 15px;
+    margin-bottom: 8px;
+  }
+  
+  .skillItem::before {
+    font-size: 12px;
   }
 } 

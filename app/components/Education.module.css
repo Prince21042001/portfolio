@@ -141,4 +141,28 @@
   .school {
     font-size: var(--fz-lg);
   }
+  
+  .educationItem {
+    padding: 20px 15px;
+  }
+  
+  .timeframe {
+    font-size: 11px;
+  }
+  
+  .degree {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .gpa {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 } 

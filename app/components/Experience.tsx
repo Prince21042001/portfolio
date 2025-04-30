@@ -40,18 +40,6 @@ const Experience = () => {
         'Spearheaded a performance optimization initiative, reducing frontend page load time by 30% through code-splitting and lazy loading.',
         'Achieved 90% test coverage with comprehensive unit testing using Jasmine and Mocha, reducing post-release defects by 25%.',
       ],
-    },
-    {
-      title: 'Computer Engineering Student',
-      company: 'Gujarat Technological University',
-      url: 'https://www.gtu.ac.in/',
-      range: 'August 2018 - May 2022',
-      duties: [
-        'Completed Bachelor of Engineering in Computer Engineering with a GPA of 3.45.',
-        'Developed strong foundation in programming, data structures, algorithms, and software development.',
-        'Worked on various academic projects using Java, Python, and web technologies.',
-        'Participated in hackathons and coding competitions to enhance problem-solving skills.',
-      ],
     }
   ];
 
