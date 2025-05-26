@@ -45,7 +45,7 @@
   flex-direction: column;
   z-index: 3;
   width: max-content;
-  min-width: 120px;
+  /* min-width: 120px; */
   margin-right: 20px;
   border-left: 2px solid var(--lightest-navy);
 }

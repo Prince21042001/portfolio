@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styles from './Nav.module.css';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import styles from "./Nav.module.css";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState('none');
+  const [scrollDirection, setScrollDirection] = useState("none");
   const [scrolledToTop, setScrolledToTop] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
+    document.body.style.overflow = !isMenuOpen ? "hidden" : "";
   };
 
-  const handleClickOutside = (e:any) => {
-    if (isMenuOpen && !e.target.closest(`.${styles.mobileMenu}`) && !e.target.closest(`.${styles.hamburger}`)) {
+  const handleClickOutside = (e: any) => {
+    if (
+      isMenuOpen &&
+      !e.target.closest(`.${styles.mobileMenu}`) &&
+      !e.target.closest(`.${styles.hamburger}`)
+    ) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
   };
 
   const handleResize = () => {
     if (window.innerWidth > 768 && isMenuOpen) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
   };
 
@@ -31,28 +35,30 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('click', handleClickOutside);
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("click", handleClickOutside);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('click', handleClickOutside);
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [isMenuOpen]);
 
   const navLinks = [
-    { name: 'About', url: '/#about', number: '01' },
-    { name: 'Experience', url: '/#experience', number: '02' },
-    { name: 'Education', url: '/#education', number: '03' },
-    { name: 'Skills', url: '/#skills', number: '04' },
-    { name: 'Work', url: '/#work', number: '05' },
-    { name: 'Contact', url: '/#contact', number: '06' },
+    { name: "About", url: "/#about", number: "01" },
+    { name: "Experience", url: "/#experience", number: "02" },
+    { name: "Education", url: "/#education", number: "03" },
+    { name: "Skills", url: "/#skills", number: "04" },
+    { name: "Work", url: "/#work", number: "05" },
+    { name: "Contact", url: "/#contact", number: "06" },
   ];
 
   return (
-    <header className={`${styles.header} ${!scrolledToTop ? styles.scrolled : ''}`}>
+    <header
+      className={`${styles.header} ${!scrolledToTop ? styles.scrolled : ""}`}
+    >
       <nav className={styles.nav}>
         <div className={styles.logo}>
           <Link href="/">
@@ -72,7 +78,12 @@ const Nav = () => {
             </li>
           ))}
           <li>
-            <a href="/PrincePatel_Resume.pdf" className={styles.resumeButton} target="_blank" rel="noopener noreferrer">
+            <a
+              href="/PrincePatel_Resume.pdf"
+              className={styles.resumeButton}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume
             </a>
           </li>
@@ -80,7 +91,17 @@ const Nav = () => {
 
         {/* Mobile Menu Button */}
         <div className={styles.hamburger} onClick={toggleMenu}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             {isMenuOpen ? (
               <g>
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -97,14 +118,19 @@ const Nav = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.active : ''}`}>
+        <div
+          className={`${styles.mobileMenu} ${isMenuOpen ? styles.active : ""}`}
+        >
           <ul className={styles.mobileLinks}>
             {navLinks.map(({ name, url, number }) => (
               <li key={name}>
-                <Link href={url} onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}>
+                <Link
+                  href={url}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    document.body.style.overflow = "";
+                  }}
+                >
                   <span className={styles.mobileNavLink}>
                     <span className={styles.mobileNavNumber}>{number}.</span>
                     {name}
@@ -113,18 +139,19 @@ const Nav = () => {
               </li>
             ))}
           </ul>
-          <a 
-            href="/PrincePatel_Resume.pdf" 
-            className={`${styles.resumeButton} ${styles.mobileResumeButton}`} 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
+          <Link href="/new_resume.pdf" passHref>
+            <a
+              className={`${styles.resumeButton} ${styles.mobileResumeButton}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </Link>
         </div>
       </nav>
     </header>
   );
 };
 
-export default Nav; 
+export default Nav;

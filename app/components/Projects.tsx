@@ -8,7 +8,7 @@ const Projects = () => {
       description: 'A full-stack SaaS platform for video summarization, leveraging OpenAI APIs to convert video content into text for enhanced accessibility. Integrated Stripe for secure payments, ensuring smooth and reliable transactions.',
       tech: ['Next.js', 'Sass', 'Tailwind CSS', 'OpenAI', 'Stripe'],
       github: 'https://github.com/Prince21042001/SnapBrief',
-      external: '#',
+      external: 'https://snapbrief-two.vercel.app/',
       image: '/images/snapbrief.png'
     },
     {
@@ -16,14 +16,14 @@ const Projects = () => {
       description: 'A project management application with workspaces, boards, lists, cards, audit logs, activity tracking, and role-based member management. Implemented using modern web technologies and database management.',
       tech: ['React.js', 'Next.js', 'Tailwind CSS', 'MySQL', 'Prisma ORM'],
       github: 'https://github.com/Prince21042001/Taskify',
-      external: '#',
-      image: '/images/snapbrief.png'
+      external: 'https://taskify-fbnafpq8q-rakshit17patels-projects.vercel.app/',
+      image: '/images/Taskify.png'
     },
     {
       title: 'ResourceHub',
       description: 'A web app to match resources with project requirements using the Hungarian algorithm, ensuring optimal team allocation. Added an intelligent search feature to query resource data, improving onboarding speed by 30% and enhancing visibility into resource availability.',
       tech: ['React.js', 'Python', 'Flask', 'Material UI', 'LangChain', 'ChromaDB'],
-      github: 'https://github.com/Prince21042001/ResourceHub',
+      github: 'https://github.com/Rakshit17patel/ResourceHub-FE',
       external: '#',
       image: '/images/resourcehub.png'
     }
